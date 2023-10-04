@@ -7,7 +7,6 @@ import {
     selectEventIsLoading,
 } from "../../../redux/event/event.select";
 import FullLoader from "../../Shared/FullLoader";
-import { selectEvent } from "../../../redux/event/eventSlice";
 import { addEvent } from "../../../redux/event/event.action";
 import { DefaultCalendar } from "../../../utils/Calendar.config";
 import { EndDayConvertor } from "../../../utils/timeConvertor";
@@ -42,7 +41,7 @@ function MyCalendar() {
     const handleEventClick = async (event) => {
         setIsEditFrom(true)
         const eventData = event.event;
-        setEventData(eventData.extendedProps);
+        await setEventData(eventData.extendedProps);
         return open();
     };
 
@@ -65,10 +64,9 @@ function MyCalendar() {
     };
 
     const handleSelectHandler = (event) => {
-        const { startStr, endStr } = event;
+        open();
         if (event) {
-            setEventData({ ...preEvent, start: startStr, end: endStr });
-            return open();
+            setEventData({ ...eventData.extendedProps });
         }
     };
 
@@ -103,7 +101,7 @@ function MyCalendar() {
                         eventChange={eventChangehandler}
                         events={eventList}
                     />
-                    <EventModal opened={opened} type={isEditFrom && 'edit'} close={close} eventData={eventData} eventList={eventList} />
+                    <EventModal opened={opened} type={isEditFrom ? 'edit' : 'create'} close={close} eventData={eventData} eventList={eventList} />
                 </>
             )}
         </>

@@ -13,7 +13,7 @@ function App() {
         <Provider store={store} >
             <MantineProvider>
                 <Notifications />
-                <Navigate to="/calendar" />
+                <Navigate to="calendar" />
                 <Outlet />
             </MantineProvider>
         </Provider>

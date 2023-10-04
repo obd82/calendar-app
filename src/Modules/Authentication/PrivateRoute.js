@@ -11,7 +11,7 @@ function PrivateRoute() {
             message: "Login First",
             position: 'top-right'
         })
-        return <Navigate to="/login" />;
+        return <Navigate to="login" />;
     }
     return <Outlet />;
 };
