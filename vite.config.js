@@ -79,13 +79,13 @@ export default defineConfig((configEnv, mode) => {
       alias: {
         '@': path.resolve(__dirname, './src'),
         src: path.resolve(__dirname, './src'),
-        utils: path.resolve(__dirname, './src/util/'),
+        utils: path.resolve(__dirname, './src/utils/'),
       },
     },
     test: {
       globals: true,
       environment: 'jsdom',
-      setupFiles: './src/util/test-utils.js',
+      setupFiles: './src/utils/test-utils.js',
     },
   })
 });

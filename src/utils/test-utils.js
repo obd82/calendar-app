@@ -7,25 +7,16 @@ import { Provider } from 'react-redux';
 import { MantineProvider } from '@mantine/core';
 import { configureStore } from '@reduxjs/toolkit'
 import '../__mocks__/matchMedia';
-import authenticationSliceReducer from '../redux/user/userSlice';
-import calendarReducer from '../redux/calendarSlice';
-import { authApi } from '../redux/api/authApi';
-import { userApi } from '../redux/api/userApi';
-import { eventApi } from '../redux/api/eventApi';
+import userReducer from '../redux/user/userSlice';
+import calendarReducer from '../redux/event/eventSlice';
 
 const customRender = (ui, {
     preloadedState = {},
     store = configureStore({
         reducer: {
-            authState: authenticationSliceReducer,
+            authState: userReducer,
             calendarState: calendarReducer
         },
-        middleware: (getDefaultMiddleware) =>
-            getDefaultMiddleware({}).concat([
-                authApi.middleware,
-                userApi.middleware,
-                eventApi.middleware,
-            ]),
         preloadedState
     }),
     ...renderOptions

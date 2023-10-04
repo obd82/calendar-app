@@ -84,50 +84,22 @@ Welcome to Eventos, your comprehensive calendar web application powered by React
 ### Backend
 
 1. Clone the repository:
+
    ```
    git clone https://github.com/odht82/calendar-app-api && cd calendar-app-api
    ```
 2. Install dependencies:
+
    ```
    npm i
    ```
 3. Create your MongoDB database and store the connection URI in a `.env` file.
 4. Add environment variables according to `.env.example`.
 5. Start the development server:
+
    ```
    npm run dev
    ```
-
-### Monolithic Full Stack
-
-1. Clone the repository:
-   ```
-   git clone https://github.com/odht82/calendar-app-full-stack
-   ```
-2. Navigate to the root directory:
-   ```
-   cd calendar-app-full-stack
-   ```
-3. Install root-level dependencies:
-   ```
-   npm i
-   ```
-4. Navigate to the frontend directory:
-   ```
-   cd frontend
-   ```
-5. Install frontend dependencies and run build:
-   ```
-   npm i && npm run build
-   ```
-6. Create your MongoDB database and store the connection URI in a `.env` file.
-7. Add environment variables according to `.env.example`.
-8. Start the development server:
-   ```
-   npm run dev
-   ```
-
-Explore the world of Eventos and make scheduling a breeze with our feature-rich calendar application!
 
 ---
 
@@ -135,8 +107,7 @@ Explore the world of Eventos and make scheduling a breeze with our feature-rich 
 
 [BackEnd Repository](https://github.com/odht82/calendar-app-api "Backend repo")
 
-[FrontEnd Repository](https://github.com/odht82/calendar-app "Frontend Eventos")
-
-[Full Stack mono Repository](https://github.com/odht82/calendar-app-full-stack "full stack")
+[FrontEnd Repository
+](https://github.com/odht82/calendar-app "Frontend Eventos")
 
 ---
