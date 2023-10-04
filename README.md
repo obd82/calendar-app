@@ -48,13 +48,6 @@ Welcome to Eventos, your comprehensive calendar web application powered by React
 - **Vitest**: A testing library for ensuring your frontend components are robust.
 - **ESLint**: Keeping your code clean and free of errors.
 
-### Backend
-
-- **Express.js**: Building a robust and performant backend server.
-- **MongoDB**: Efficiently storing and retrieving your data.
-- **JSON Web Tokens (JWT)**: Ensuring secure user authentication and authorization.
-- **Mongoose**: An elegant object modeling tool for MongoDB.
-
 ## Installation
 
 ### Requirements:
@@ -65,37 +58,21 @@ Welcome to Eventos, your comprehensive calendar web application powered by React
 ### Frontend
 
 1. Clone the repository:
+
    ```
    git clone https://github.com/odht82/calendar-app && cd calendar-app
    ```
 2. Install dependencies:
+
    ```
    npm i
    ```
 3. Build the frontend:
+
    ```
    npm run build
    ```
 4. Start the development server:
-   ```
-   npm run dev
-   ```
-
-### Backend
-
-1. Clone the repository:
-
-   ```
-   git clone https://github.com/odht82/calendar-app-api && cd calendar-app-api
-   ```
-2. Install dependencies:
-
-   ```
-   npm i
-   ```
-3. Create your MongoDB database and store the connection URI in a `.env` file.
-4. Add environment variables according to `.env.example`.
-5. Start the development server:
 
    ```
    npm run dev
@@ -103,11 +80,8 @@ Welcome to Eventos, your comprehensive calendar web application powered by React
 
 ---
 
-### **Repositories:**
+### **Other Repository:**
 
 [BackEnd Repository](https://github.com/odht82/calendar-app-api "Backend repo")
-
-[FrontEnd Repository
-](https://github.com/odht82/calendar-app "Frontend Eventos")
 
 ---

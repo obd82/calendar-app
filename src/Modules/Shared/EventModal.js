@@ -4,7 +4,7 @@ import { Button, TextInput, Group, Switch, Select, Modal } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { DateTimePicker } from '@mantine/dates';
 import moment from 'moment';
-import { createEvent } from '../../redux/event/event.thunk';
+import { createEvent, deleteEvent } from '../../redux/event/event.thunk';
 
 const EventModal = ({ type, close, opened, eventData = {}, eventList }) => {
     const { _id } = eventData;
@@ -155,7 +155,7 @@ const EventModal = ({ type, close, opened, eventData = {}, eventList }) => {
 
                     <Group justify="flex-end" mt="md">
                         <Button type="submit">Save</Button>
-                        {type === 'edit' && <Button onClick={() => "deleteEventById({ id: _id })"} type="button" color="red">Delete</Button>}
+                        {type === 'edit' && <Button onClick={() => deleteEvent({ id: _id })} type="button" color="red">Delete</Button>}
                     </Group>
                 </form>
             </Modal>

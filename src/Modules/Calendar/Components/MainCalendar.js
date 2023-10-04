@@ -96,7 +96,7 @@ function MyCalendar() {
                         headerToolbar={{
                             left: "prev,today,next",
                             center: "title",
-                            right: "timeGridMonth,timeGridWeek,timeGridDay myCustomButton",
+                            right: "timeGridWeek,timeGridDay myCustomButton",
                         }}
                         select={handleSelectHandler}
                         eventClick={handleEventClick}
