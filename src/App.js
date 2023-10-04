@@ -1,4 +1,4 @@
-import { Outlet } from 'react-router-dom';
+import { Navigate, Outlet } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { MantineProvider } from '@mantine/core';
 
@@ -13,6 +13,7 @@ function App() {
         <Provider store={store} >
             <MantineProvider>
                 <Notifications />
+                <Navigate to="/calendar" />
                 <Outlet />
             </MantineProvider>
         </Provider>

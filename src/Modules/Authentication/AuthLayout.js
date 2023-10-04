@@ -11,7 +11,6 @@ const AuthLayout = () => {
             return navigate('/calendar')
         }
     }, []);
-    console.log(isLoggedIn);
     if (isLoggedIn) {
         return <Navigate to="calendar" />;
     }

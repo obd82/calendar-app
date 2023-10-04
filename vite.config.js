@@ -56,6 +56,9 @@ export default defineConfig((configEnv, mode) => {
         fileName: (format) => `main.${format}.js`,
       },
       rollupOptions: {
+        input: {
+          main: resolve(__dirname, 'index.html'),
+        },
         external: [
           'react',
           'react-dom',

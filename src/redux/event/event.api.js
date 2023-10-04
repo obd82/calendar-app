@@ -13,7 +13,6 @@ const getEvents = async (token) => {
 };
 
 const deleteEvent = async (eventId, token) => {
-  console.log(eventId);
   const config = {
     headers: {
       Authorization: `Bearer ${token}`,
