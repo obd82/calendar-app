@@ -26,7 +26,7 @@ export const appRoutes = createBrowserRouter([
                 element: <PrivateRoute />,
                 children: [
                     {
-                        path: "calendar",
+                        path: "/calendar",
                         element: <Calendar />,
                     },
 

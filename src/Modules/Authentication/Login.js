@@ -22,11 +22,6 @@ function Login() {
         validate: { email: isEmail('Invalid email') },
     });
     useEffect(() => {
-        if (userIsLoading) {
-            navigate("/calendar");
-        }
-    }, []);
-    useEffect(() => {
         if (isError) {
             notifications.show({
                 color: 'red',

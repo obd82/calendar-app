@@ -13,7 +13,12 @@ function App() {
     const sessionCurrentUser = JSON.parse(sessionStorage.getItem("user"));
     const localCurrentUser = JSON.parse(localStorage.getItem("user"))
     const userNotExist = !localCurrentUser && !sessionCurrentUser;
-    if (userNotExist) navigate("/login")
+    useEffect(() => {
+        if (userNotExist) {
+            return navigate('/calendar')
+        }
+    }, []);
+
     return (
         <Provider store={store} >
             <MantineProvider>

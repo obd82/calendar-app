@@ -2,8 +2,6 @@
   "name": "event-calender",
   "private": true,
   "version": "0.0.0",
-  "main": "dist/main.cjs.js",
-  "module": "dist/main.es.js",
   "scripts": {
     "clean": "rimraf node_modules dist",
     "dev": "vite --port 3000",
