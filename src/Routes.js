@@ -7,6 +7,7 @@ import Login from './Modules/Authentication/Login';
 import SignUp from './Modules/Authentication/SignUp';
 import ErrorBoundary from './Modules/Error/ErrorBoundary';
 import Calendar from './Modules/Calendar/Calendar.page';
+import AuthLayout from './Modules/Authentication/AuthLayout';
 
 export const appRoutes = createBrowserRouter([
     {
@@ -15,18 +16,23 @@ export const appRoutes = createBrowserRouter([
         errorElement: <ErrorBoundary />,
         children: [
             {
-                path: "login",
-                element: <Login />,
-            },
-            {
-                path: "signup",
-                element: <SignUp />,
+                element: <AuthLayout />,
+                children: [
+                    {
+                        path: "login",
+                        element: <Login />,
+                    },
+                    {
+                        path: "signup",
+                        element: <SignUp />,
+                    },
+                ],
             },
             {
                 element: <PrivateRoute />,
                 children: [
                     {
-                        path: "/calendar",
+                        path: "calendar",
                         element: <Calendar />,
                     },
 
