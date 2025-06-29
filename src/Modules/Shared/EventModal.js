@@ -155,7 +155,7 @@ const EventModal = ({ type, close, opened, eventData = {}, eventList }) => {
 
                     <Group justify="flex-end" mt="md">
                         <Button type="submit">Save</Button>
-                        {type === 'edit' && <Button onClick={() => deleteEvent({ id: _id })} type="button" color="red">Delete</Button>}
+                        {type === 'edit' && <Button onClick={() => dispatch(deleteEvent(_id))} type="button" color="red">Delete</Button>}
                     </Group>
                 </form>
             </Modal>
