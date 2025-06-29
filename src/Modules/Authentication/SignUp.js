@@ -19,7 +19,7 @@ function SignUp() {
     const navigate = useNavigate();
     const { isError, message } = useSelector(selectUserReducer, shallowEqual);
     const user = useSelector(selectUser);
-    const singUpIsLoading = useSelector(selectUserIsLoading);
+    const signUpIsLoading = useSelector(selectUserIsLoading);
 
     useEffect(() => {
         if (isError) {
@@ -63,7 +63,7 @@ function SignUp() {
 
     return (
         <>
-            {singUpIsLoading ? (
+            {signUpIsLoading ? (
                 <FullLoader />
             ) : (
                 <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
