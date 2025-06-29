@@ -50,7 +50,7 @@ function SignUp() {
         },
         validate: {
             email: isEmail('Invalid email'),
-            name: hasLength({ min: 2, max: 16 }, 'First Name must be 2-16 characters long'),
+            name: hasLength({ min: 2, max: 16 }, 'Name must be 2-16 characters long'),
             confirmPassword: matchesField('password', 'Passwords are not the same'),
         },
     });
