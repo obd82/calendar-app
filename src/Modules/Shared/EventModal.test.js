@@ -30,7 +30,7 @@ describe('EventModal', () => {
         await fireEvent.click(deleteButton);
 
         expect(title).toBeInTheDocument();
-        waitFor(() => {
+        await waitFor(() => {
             expect(deleteEventByIdMock).toHaveBeenCalledWith({ id: '123' })
             expect(mockClose).toBeCalledTimes(1)
         });
@@ -88,18 +88,18 @@ describe('EventModal', () => {
         await fireEvent.change(screen.getByTestId('startDateTime'), { target: { value: '2022-01-01T00:00:00.000Z' } });
         await fireEvent.change(screen.getByTestId('endDateTime'), { target: { value: '2022-01-01T01:00:00.000Z' } });
         await fireEvent.submit(screen.getByText('Save'));
-        waitFor(() => {
+        await waitFor(() => {
             expect(updateEventById).toHaveBeenCalledWith({ values: form.values });
             expect(form.reset).toHaveBeenCalled();
-            expect(close).toHaveBeenCalled();
+            expect(mockClose).toHaveBeenCalled();
         })
     });
     it('should display the repeat cycle field when repeat is not "none"', async () => {
         render(<EventModal type="create" close={mockClose} opened={true} />);
         const repeatSelect = screen.getByTestId("repeat");
         expect(screen.queryByTestId("repeatCycle")).not.toBeInTheDocument();
-        await fireEvent.change(repeatSelect, { targe: { value: 'weekly' } })
-        waitFor(() => {
+        await fireEvent.change(repeatSelect, { target: { value: 'weekly' } })
+        await waitFor(() => {
             expect(screen.queryByTestId("repeatCycle")).toBeInTheDocument();
         })
     });
@@ -108,7 +108,7 @@ describe('EventModal', () => {
         expect(screen.getByTestId('endDateTime').value).toBe('');
         expect(screen.queryByLabelText('End Date Time')).not.toBeInTheDocument();
         await fireEvent.click(screen.getByLabelText('Full Day Event'));
-        waitFor(() => { expect(screen.queryByLabelText('End Date Time')).toBeInTheDocument() });
+        await waitFor(() => { expect(screen.queryByLabelText('End Date Time')).toBeInTheDocument() });
     });
     it('should display an error message when start time is not provided', async () => {
         const eventData = {};
@@ -122,7 +122,7 @@ describe('EventModal', () => {
         expect(errorMessage).not.toBeInTheDocument();
         await fireEvent.change(startTimeInput, { target: { value: '' } });
         await fireEvent.click(saveButton);
-        waitFor(() => { expect(errorMessage).toBeInTheDocument() });
+        await waitFor(() => { expect(errorMessage).toBeInTheDocument() });
     });
     it('should display an error message when title is not provided', () => {
         const eventData = {};
